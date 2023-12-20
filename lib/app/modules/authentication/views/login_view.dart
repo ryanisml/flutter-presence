@@ -108,7 +108,6 @@ class LoginView extends GetView<LoginController> {
                   child: Container(
                     width: MediaQuery.of(context).size.width,
                     padding: const EdgeInsets.only(left: 14, right: 14, top: 4),
-                    margin: const EdgeInsets.only(bottom: 24),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
                       border: Border.all(
@@ -152,6 +151,18 @@ class LoginView extends GetView<LoginController> {
                     ),
                   ),
                 ),
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  margin: const EdgeInsets.only(top: 10, bottom: 10),
+                  alignment: Alignment.centerRight,
+                  child: TextButton(
+                    onPressed: () => Get.toNamed(Routes.forgotPassword),
+                    style: TextButton.styleFrom(
+                      foregroundColor: AppColor.secondarySoft,
+                    ),
+                    child: const Text("Forgot your password?"),
+                  ),
+                ),
                 Obx(
                   () => SizedBox(
                     width: MediaQuery.of(context).size.width,
@@ -177,23 +188,12 @@ class LoginView extends GetView<LoginController> {
                           fontSize: 16,
                           fontFamily: 'poppins',
                           fontWeight: FontWeight.w500,
+                          color: Colors.white,
                         ),
                       ),
                     ),
                   ),
-                ),
-                Container(
-                  width: MediaQuery.of(context).size.width,
-                  margin: const EdgeInsets.only(top: 4),
-                  alignment: Alignment.centerLeft,
-                  child: TextButton(
-                    onPressed: () => Get.toNamed(Routes.forgotPassword),
-                    style: TextButton.styleFrom(
-                      foregroundColor: AppColor.secondarySoft,
-                    ),
-                    child: const Text("Forgot your password?"),
-                  ),
-                ),
+                )
               ],
             ),
           ),
